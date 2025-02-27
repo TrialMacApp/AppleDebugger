@@ -1,0 +1,2 @@
+GOARCH=arm64 GOOS=darwin go build -ldflags="-s -w" -trimpath -tags=netgo -gcflags=all="-B" -o ../bin/preprocessor_arm  .
+GOARCH=amd64 GOOS=darwin go build -ldflags="-s -w" -trimpath -tags=netgo -gcflags=all="-B" -o ../bin/preprocessor_x86  .
