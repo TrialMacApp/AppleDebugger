@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Identifier</key>
+	<string>io.github.TrialMacApp.templates.ios.lite</string>
+    <key>Ancestors</key>
+	<array>
+		<string>com.apple.dt.unit.bundleBase</string>
+		<string>com.apple.dt.unit.iosBase</string>
+	</array>
+    <key>Concrete</key>
+	<true/>
+    <key>Description</key>
+	<string>iOS app debugging.</string>
+    <key>SortOrder</key>
+	<integer>4</integer>
+    <key>Nodes</key>
+	<array>
+		<string>TargetApp/put app here</string>
+		<string>dSYM/put dSYM here</string>
+		<string>Info.plist</string>
+	</array>
+    <key>Definitions</key>
+    <dict>
+		<key>TargetApp/put app here</key>
+		<dict>
+			<key>TargetIndices</key>
+			<array/>
+			<key>Group</key>
+			<array>
+				<string>TargetApp</string>
+			</array>
+		</dict>
+		<key>dSYM/put dSYM here</key>
+		<dict>
+			<key>TargetIndices</key>
+			<array/>
+			<key>Group</key>
+			<array>
+				<string>dSYMFile</string>
+			</array>
+		</dict>
+		<key>Info.plist</key>
+		<dict>
+			<key>Path</key>
+			<string>Info.plist</string>
+		</dict>
+	</dict>
+    <key>Targets</key>
+	<array>
+		<dict>
+            <key>ProductType</key>
+			<string>com.apple.product-type.application</string>
+            <key>SharedSettings</key>
+			<dict>
+				<key>GENERATE_INFOPLIST_FILE</key>
+				<string>YES</string>
+				<key>EXCLUDED_SOURCE_FILE_NAMES</key>
+				<array>
+				<string>"put app here"</string>
+				<string>"put dSYM here"</string>
+				<string>Info.plist</string>
+				</array>
+			</dict>
+			<key>BuildPhases</key>
+			<array>
+				<dict>
+					<key>Class</key>
+					<string>Sources</string>
+				</dict>
+				<dict>
+					<key>Class</key>
+					<string>Frameworks</string>
+				</dict>
+				<dict>
+					<key>RunOnlyForDeploymentPostprocessing</key>
+					<false/>
+					<key>Class</key>
+					<string>ShellScript</string>
+					<key>ShellPath</key>
+					<string>/bin/sh</string>
+					<key>ShellScript</key>
+					<string>/opt/AppleDebugger/preprocessing.sh -mode-lite</string>
+					<key>Name</key>
+					<string>Preprocessing app</string>
+				</dict>
+				<dict>
+					<key>Class</key>
+					<string>Resources</string>
+				</dict>
+				<dict>
+					<key>RunOnlyForDeploymentPostprocessing</key>
+					<false/>
+					<key>DstSubfolderSpec</key>
+					<integer>10</integer>
+					<key>DstPath</key>
+					<string></string>
+					<key>Class</key>
+					<string>CopyFiles</string>
+				</dict>
+				<dict>
+					<key>RunOnlyForDeploymentPostprocessing</key>
+					<false/>
+					<key>Class</key>
+					<string>ShellScript</string>
+					<key>ShellPath</key>
+					<string>/bin/sh</string>
+					<key>ShellScript</key>
+					<string>/opt/AppleDebugger/preprocessing.sh -del-useless-files
+/opt/AppleDebugger/preprocessing.sh -codesign</string>
+					<key>Name</key>
+					<string>Codesign</string>
+				</dict>
+			</array>
+        </dict>
+    </array>
+    <key>Options</key>
+	<array>
+        <dict>
+            <key>Identifier</key>
+            <string>TestOptions</string>
+            <key>Required</key>
+            <true/>
+            <key>Name</key>
+            <string>Test Options</string>
+            <key>NotPersisted</key>
+            <true/>
+            <key>Description</key>
+            <string>Test Options Description.</string>
+            <key>Default</key>
+            <string>Test_Options</string>
+            <key>Type</key>
+            <string>text</string>
+        </dict>
+	</array>
+    <key>Project</key>
+	<dict>
+		<key>SharedSettings</key>
+		<dict>
+			<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+			<string>9.0</string>
+		</dict>
+		<key>Configurations</key>
+		<dict>
+			<key>Debug</key>
+			<dict>
+				<key>ENABLE_USER_SCRIPT_SANDBOXING</key>
+				<string>NO</string>
+				<key>GENERATE_INFOPLIST_FILE</key>
+				<string>NO</string>
+			</dict>
+			<key>Release</key>
+			<dict>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+				<key>ENABLE_USER_SCRIPT_SANDBOXING</key>
+				<string>NO</string>
+				<key>GENERATE_INFOPLIST_FILE</key>
+				<string>NO</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
