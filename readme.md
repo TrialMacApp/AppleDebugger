@@ -16,9 +16,11 @@ Pro template integrates many practical tools, including http interception, anti-
 
 In the future, macOS app support will be provided. Some of the codes I used in trial-macOS-app will be added as template extensions.
 
-### Warning!
-
-This project may undergo significant changes. Currently, it is just a preview/test version.
+> [!IMPORTANT]
+>
+> This project may undergo significant changes. Currently, it is just a preview/test version.
+>
+> Do not use sudo to install this project, just use an ordinary user to install it like theos.
 
 ### Installation and Uninstallation
 
