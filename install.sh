@@ -18,7 +18,7 @@ echo -e "${BLUE}Start installing Xcode custom templates.${NC}"
 mkdir -p "$XCODE_TEMPLATES_DIR"
 
 # 连接模板
-ln -fhs "$AppleDebuggerPath/templates" "$XCODE_TEMPLATES_DIR/AppleDebugger"
+ln -fhs "/opt/AppleDebugger/templates" "$XCODE_TEMPLATES_DIR/AppleDebugger"
 
 # 添加环境变量
 echo "# AppleDebugger " >> "$BASH_PROFILE"
