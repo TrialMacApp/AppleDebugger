@@ -65,7 +65,7 @@
 					<key>ShellPath</key>
 					<string>/bin/sh</string>
 					<key>ShellScript</key>
-					<string>/opt/AppleDebugger/preprocessing.sh -mode-general</string>
+					<string>/opt/AppleDebugger/preprocessing.sh -m pro --del-ipa</string>
 				</dict>
 				<dict>
 					<key>Class</key>
@@ -89,8 +89,8 @@
 					<key>ShellPath</key>
 					<string>/bin/sh</string>
 					<key>ShellScript</key>
-					<string>/opt/AppleDebugger/preprocessing.sh -del-useless-files
-/opt/AppleDebugger/preprocessing.sh -codesign</string>
+					<string>/opt/AppleDebugger/preprocessing.sh -m pro --del-useless-files
+/opt/AppleDebugger/preprocessing.sh -m pro --codesign</string>
 					<key>Name</key>
 					<string>Codesign</string>
 				</dict>
